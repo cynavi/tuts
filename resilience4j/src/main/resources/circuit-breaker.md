@@ -75,6 +75,8 @@ CircuitBreakerRegistry circuitBreakerRegistry = CircuitBreakerRegistry.of(circui
 ```
 From Resilience4j documentation: https://resilience4j.readme.io/docs/circuitbreaker#create-and-configure-a-circuitbreaker.
 
+<details>
+    <summary>Configurable Properties</summary>
 | Config Property                            | Default Value       | Description |
 |--------------------------------------------|---------------------|-------------|
 | `failureRateThreshold`                     | 50                  | Configures the failure rate threshold in percentage. When the failure rate is equal or greater than the threshold, the CircuitBreaker transitions to open and starts short-circuiting calls. |
@@ -91,6 +93,8 @@ From Resilience4j documentation: https://resilience4j.readme.io/docs/circuitbrea
 | `ignoreExceptions`                         | empty               | A list of exceptions that are ignored and neither count as a failure nor success. Any exception matching or inheriting from the list will not be considered a failure or success, even if it is part of `recordExceptions`. |
 | `recordFailurePredicate`                   | `throwable -> true` | By default, all exceptions are recorded as failures. A custom Predicate can be defined to determine if an exception should be recorded as a failure. If the Predicate returns `true`, the exception counts as a failure. If `false`, it is treated as a success unless explicitly ignored. |
 | `ignoreExceptionPredicate`                 | `throwable -> false` | By default, no exception is ignored. A custom Predicate can be defined to determine if an exception should be ignored. If the Predicate returns `true`, the exception is ignored and does not count as a failure or success. |
+
+</details>
 
 ## Unit Testing the Circuit Breaker
 
